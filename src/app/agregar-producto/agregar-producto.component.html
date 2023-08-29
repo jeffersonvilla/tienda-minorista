@@ -1,0 +1,47 @@
+<div class="container-fluid">
+
+    <div class="card" style="width: 50%;margin: 5px auto;">
+        <div class="card-header">
+            Agregar nuevo producto
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input [(ngModel)]="producto.nombre" id="nombre" name="nombre" class="form-control" type="text">
+                </div>
+
+                <div class="form-group">
+                    <label for="marca">Marca</label>
+                    <input [(ngModel)]="producto.marca" id="marca" name="marca" class="form-control" type="text">
+                </div>
+
+                <div class="form-group">
+                    <label for="descripcion">Descripcion</label>
+                    <input [(ngModel)]="producto.descripcion" id="descripcion" name="descripcion" class="form-control" type="text">
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Precio</label>
+                    <input [(ngModel)]="producto.precio" id="precio" name="precio" class="form-control" type="number">
+                </div>
+
+                <div class="form-group">
+                    <label for="cantidadDisponible">Cantidad disponible</label>
+                    <input [(ngModel)]="producto.cantidadDisponible" id="cantidadDisponible" name="cantidadDisponible" class="form-control" type="number">
+                </div>
+
+                <button class="btn btn-primary" (click)="guardar()">Guardar</button>
+            </form>
+        </div>
+        <div class="card-footer" *ngIf="showAlert">
+            <div class="alert alert-success">
+                <button (click)="closeAlert()" class="close">
+                    &times;
+                </button>
+                <strong>Success</strong>
+            </div>
+        </div>
+    </div>
+</div>
+ 

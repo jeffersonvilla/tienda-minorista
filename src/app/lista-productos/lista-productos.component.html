@@ -1,0 +1,35 @@
+<div class="container mt-4">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Marca</th>
+              <th>Descripcion</th>
+              <th>Precio</th>
+              <th>Cantidad disponible</th>
+              <th>Acciones</th>
+              <th></th> 
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let producto of productos">
+              <td>{{ producto.nombre }}</td>
+              <td>{{ producto.marca }}</td>
+              <td>{{ producto.descripcion }}</td>
+              <td>{{ producto.precio }}</td>
+              <td>{{ producto.cantidadDisponible }}</td>
+              <td> 
+                <button class="btn btn-warning" style="margin-right: 5px;"
+                  [routerLink]="['/actualizar-producto', producto.idProducto]">Actualizar</button>
+              </td>
+              <td>
+                <button class="btn btn-danger" (click)="eliminarProducto(producto.idProducto)">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>  
+  </div>
